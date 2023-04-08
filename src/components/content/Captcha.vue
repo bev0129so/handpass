@@ -15,7 +15,6 @@ import { ref, onMounted } from 'vue'
 const captchaSrc = ref('')
 const getOrRefresh = () => {
   captchaSrc.value = '/captcha?time=' + new Date()
-  console.log(captchaSrc.value)
 }
 onMounted(() => {
   getOrRefresh()

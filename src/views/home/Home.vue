@@ -5,7 +5,7 @@
 -->
 <template>
   <div id="home">
-    <MyHeader/>
+    <MyHeader />
     <div class="banner">
       <div class="box" v-for="img in bannerImg" :key="img.name">
         <span>{{ img.name }}</span>

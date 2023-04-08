@@ -23,26 +23,27 @@
 
     <!-- 用户已登录时展示的部分 key作用: 键发生变化，将重新创建元素 -->
     <!-- TODO -->
-    <div v-if="user.isLogin" key="loginHeader" class="login-header">
+    <div v-if="true" key="loginHeader" class="login-header">
       <router-link
         to="/show-echart"
         tag="span"
         class="manager"
-        v-if="user.roleId == 3 || user.roleId == 2"
+        v-if="user.roleId == 1 || user.roleId == 2"
         >管理员入口
       </router-link>
       <div class="user-center" @click="$router.push({ name: 'PublishOrder' })">
-        <el-button type="primary">我要发布</el-button>
+        <el-button type="primary" @click="$router.push({ name: 'PublishOrder' })">我要发布</el-button>
         <!-- 个人中心导航 -->
         <el-menu
           menu-trigger="hover"
           mode="horizontal"
           active-text-color="var(--theme-medium-green)"
           :router="true"
+          :ellipsis="false"
         >
           <el-sub-menu index="1">
             <template #title>
-              <el-avatar size="medium" :src="user.userIcon"></el-avatar>
+              <el-avatar size="default" :src="user.userIcon"></el-avatar>
             </template>
             <el-menu-item index="/userinfo">个人中心</el-menu-item>
             <el-menu-item index="/my-published">我的订单</el-menu-item>

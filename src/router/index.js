@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import store from '../store/index.js'
 
 const routes = [
   {
@@ -15,8 +16,32 @@ const routes = [
     name: 'LoginPage',
     component: () => import('../views/login/LoginPage.vue'),
     meta: {
-        title: 'gdut-gofor | 登录'
+      title: 'gdut-gofor | 登录'
+    }
+  },
+  {
+    path: '/publish',
+    name: 'PublishOrder',
+    component: () => import('../views/PublishOrder.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/center',
+    name: 'user-center',
+    component: () => import('../views/user-center/UserCenter.vue'),
+    meata: {
+      requiresAuth: true,
+      title: 'gdut-gofor | 个人中心页'
+    },
+    children:[
+      {
+        path: '/my-published',
+        name: 'MyPublished',
+        component: () => import('../views/user-center/MyPublished.vue'),
       }
+    ]
   }
 ]
 const router = createRouter({
@@ -24,12 +49,20 @@ const router = createRouter({
   routes: routes
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !store.state.user.isLogin) {
+    next({ name: 'LoginPage' })
+  } else {
+    next()
+  }
+})
+
 // 全局后置守卫，修改页面title
 router.afterEach((to) => {
-    if (to.meta.title) {
-      document.title = to.meta.title;
-    } else {
-      document.title = 'gdut-gofor | 广工人的跑腿系统';
-    }
-  })
+  if (to.meta.title) {
+    document.title = to.meta.title
+  } else {
+    document.title = 'gdut-gofor | 广工人的跑腿系统'
+  }
+})
 export default router
