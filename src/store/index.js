@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import mutations from './mutations'
+import getters from './getters'
 const state = {
     user: {
         // isLogin: window.localStorage.getItem('token') ? true: false,
@@ -34,10 +35,33 @@ const state = {
         id: 6
     }
 ],
+    // 订单状态
+    orderStatus: [{
+        id: 0,
+        label: "未接单"
+    },
+    {
+        id: 1,
+        label: "已接单"
+    },
+    {
+        id: 2,
+        label: "待评价"
+    },
+    {
+        id: 3,
+        label: "已评价"
+    },
+    {
+        id: 4,
+        label: "已取消"
+    },
+    ],
 }
 
 export default createStore({
     //全局对象：用于保存所有组件的公共数据
     state,
-    mutations
+    mutations,
+    getters
 })

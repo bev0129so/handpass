@@ -7,3 +7,11 @@ export const publishOrder = (data) => {
       data
     })
   }
+
+  // 获取用户发布的定单
+export function publishedOrders(params) {
+  return request({
+    url: '/orders/publishOrders',
+    params
+  })
+}

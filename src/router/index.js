@@ -32,7 +32,7 @@ const routes = [
     name: 'user-center',
     component: () => import('../views/user-center/UserCenter.vue'),
     meata: {
-      requiresAuth: true,
+      requiresAuth: false,
       title: 'gdut-gofor | 个人中心页'
     },
     children:[

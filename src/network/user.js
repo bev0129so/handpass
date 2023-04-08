@@ -20,3 +20,11 @@ export const getUserInfo = () => {
       url: '/info',
     })
   }
+
+  // 根据id获取用户信息
+export function getUserInfoById(params) {
+    return request({
+      url: '/admin/getUserById',
+      params
+    })
+  }

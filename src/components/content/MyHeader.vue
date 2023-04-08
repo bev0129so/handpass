@@ -31,7 +31,7 @@
         v-if="user.roleId == 1 || user.roleId == 2"
         >管理员入口
       </router-link>
-      <div class="user-center" @click="$router.push({ name: 'PublishOrder' })">
+      <div class="user-center">
         <el-button type="primary" @click="$router.push({ name: 'PublishOrder' })">我要发布</el-button>
         <!-- 个人中心导航 -->
         <el-menu
