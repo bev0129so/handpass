@@ -23,4 +23,13 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: routes
 })
+
+// 全局后置守卫，修改页面title
+router.afterEach((to) => {
+    if (to.meta.title) {
+      document.title = to.meta.title;
+    } else {
+      document.title = 'gdut-gofor | 广工人的跑腿系统';
+    }
+  })
 export default router

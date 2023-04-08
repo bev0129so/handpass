@@ -50,7 +50,12 @@ export function request(config) {
 	}, err => {
 		// 没有调用到接口
 		// 401权限错误，转到登录页
-		if (err.response.code == 504 || err.response.code == 404) {
+		if(!err.response) {
+			ElMessage.error({
+				message: '服务器错误'
+			})
+		}
+		else if (err.response.code == 504 || err.response.code == 404) {
 			ElMessage.error({
 				message: '找不到服务器！'
 			})
