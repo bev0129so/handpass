@@ -40,6 +40,14 @@ const routes = [
         path: '/my-published',
         name: 'MyPublished',
         component: () => import('../views/user-center/MyPublished.vue'),
+      },
+      {
+        path: '/userinfo',
+        name: 'UserInfo',
+        component: () => import('../views/user-center/UserInfo.vue'),
+        props: {
+          user: false
+        }
       }
     ]
   }

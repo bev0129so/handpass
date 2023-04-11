@@ -36,3 +36,11 @@ export function getUserInfoById(params) {
       params
     })
   }
+
+export const updateUserInfo = (data) => {
+  return request({
+    url: '/update',
+    method: 'post',
+    data
+  })
+}

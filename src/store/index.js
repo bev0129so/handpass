@@ -57,6 +57,20 @@ const state = {
         label: "已取消"
     },
     ],
+    	// 用户所在地
+	positions: [{
+        label: "大学城校区",
+        value: "大学城校区",
+    },
+    {
+        label: "龙洞校区",
+        value: "龙洞校区",
+    },
+    {
+        label: "东风路校区",
+        value: "东风路校区",
+    },
+]
 }
 
 export default createStore({
