@@ -129,14 +129,13 @@ onBeforeRouteLeave((to, from, next) => {
         confirmButtonText: '离开页面',
         cancelButtontext: '留在当前页面',
         type: 'warning'
-      }
+      })
         .then(() => {
           next()
         })
         .catch(() => {
           next(from.path)
         })
-    )
   }
 });
 

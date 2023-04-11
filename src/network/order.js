@@ -15,3 +15,10 @@ export function publishedOrders(params) {
     params
   })
 }
+
+export const getHistoryOrder = () => {
+  return request({
+    url: 'historyOrder',
+    method: 'post',
+  })
+}

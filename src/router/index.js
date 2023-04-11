@@ -48,6 +48,11 @@ const routes = [
         props: {
           user: false
         }
+      },
+      {
+        path: '/history',
+        name: 'MyHistory',
+        component: () => import('../views/user-center/MyHistory.vue')
       }
     ]
   }
