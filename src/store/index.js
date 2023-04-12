@@ -5,10 +5,14 @@ const state = {
     user: {
         // isLogin: window.localStorage.getItem('token') ? true: false,
         isLogin: true,
-        userId: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).userId : 0,
-		username: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).username : "",
-		roleId: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).roleId : 3,
-		userIcon: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).userIcon : "",
+        // userId: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).userId : 1800,
+        userId: 1800,
+		// username: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).username : "default",
+		username: "default",
+		// roleId: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).roleId : 3,
+		roleId: 3,
+		// userIcon: window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')).userIcon : "",
+		userIcon: "",
     },
     orderCategory: [{
         name: "帮拿外卖",

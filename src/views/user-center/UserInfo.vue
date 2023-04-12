@@ -136,6 +136,8 @@ onBeforeRouteLeave((to, from, next) => {
         .catch(() => {
           next(from.path)
         })
+  } else {
+    next()
   }
 });
 

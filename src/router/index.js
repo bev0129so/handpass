@@ -45,14 +45,29 @@ const routes = [
         path: '/userinfo',
         name: 'UserInfo',
         component: () => import('../views/user-center/UserInfo.vue'),
-        props: {
-          user: false
-        }
+        // props: {
+        //   user: false
+        // }
+      },
+      {
+        path: '/complain',
+        name: 'Complain',
+        component: () => import('../views/user-center/MyHistory.vue')
+      },
+      {
+        path: '/my-received',
+        name: 'MyReceived',
+        component: () => import('../views/user-center/MyHistory.vue')
       },
       {
         path: '/history',
         name: 'MyHistory',
         component: () => import('../views/user-center/MyHistory.vue')
+      },
+      {
+        path: '/security',
+        name: 'Security',
+        component: () => import('../views/user-center/Security.vue')
       }
     ]
   }

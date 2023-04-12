@@ -20,9 +20,14 @@
                     </el-menu>
                 </el-aside>
                 <el-main class="content">
-                    <keep-alive>
+                    <!-- <keep-alive>
                         <router-view></router-view>
-                    </keep-alive>
+                    </keep-alive> -->
+                    <router-view v-slot="{ Component }">
+                        <keep-alive>
+                            <component :is="Component" />
+                        </keep-alive>
+                    </router-view>
                 </el-main>
             </el-container>
         </main>
